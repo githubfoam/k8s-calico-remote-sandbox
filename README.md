@@ -21,10 +21,10 @@ sudo ansible-playbook -i /vagrant/kube-cluster/hosts /vagrant/kube-cluster/4_wor
 
 vagrant ssh k8s-master01
 $ kubectl get nodes
-NAME           STATUS   ROLES    AGE   VERSION
-k8s-master01   Ready    master   20m   v1.16.0
-worker01       Ready    <none>   12m   v1.16.0
-worker02       Ready    <none>   12m   v1.16.0
+NAME           STATUS   ROLES    AGE     VERSION
+k8s-master01   Ready    master   10m     v1.17.0
+worker01       Ready    <none>   6m54s   v1.17.0
+worker02       Ready    <none>   6m58s   v1.17.0
 
 $ kubectl get pods --all-namespaces
 NAMESPACE     NAME                                      READY   STATUS    RESTARTS   AGE
@@ -76,10 +76,6 @@ upgrade kubernetes
 ~~~~
 vagrant ssh k8s-master01
 $ kubectl get nodes
-NAME           STATUS   ROLES    AGE     VERSION
-k8s-master01   Ready    master   10m     v1.17.0
-worker01       Ready    <none>   6m54s   v1.17.0
-worker02       Ready    <none>   6m58s   v1.17.0
 
 
 $ apt-cache madison kubelet | more
